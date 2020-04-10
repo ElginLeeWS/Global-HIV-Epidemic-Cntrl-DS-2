@@ -1,0 +1,89 @@
+    [ {
+            "name":"Botswana", 
+            "results": [ 
+    
+                        {
+                            "year": "2017",
+                            "indicator":"HTS_TEST",                            
+                            "target": "138,368",
+                            "actual": "81,745",
+                            "percent": "56.12" 
+                        
+                        },
+                        {
+                            "year": "2018",
+                            "indicator":"HTS_TEST",
+                            "target": "101,375",
+                            "actual": "95,013",
+                            "percent":"89.03" 
+                        
+                        },
+                        {
+                            "year": "2019",
+                            "indicator":"HTS_TEST",
+                            "target": "24,011",
+                            "actual": "49,910",
+                            "percent": "100" 
+                        },
+                                    
+                        {
+                            "year":"2017",
+                            "indicator":"HTS_TEST_POS",
+                            "target":"6822",
+                            "actual": "2976",
+                            "percent": "41.44"
+                        },
+                        {
+                            "year":"2018",
+                            "indicator":"HTS_TEST_POS",
+                            "target":"6998",
+                            "actual": "3144",
+                            "percent": "42.68"
+                        },
+                        {
+                            "year":"2019",
+                            "indicator":"HTS_TEST_POS",
+                            "target":"1765",
+                            "actual": "1474",
+                            "percent": "79.34"
+                        },                                                
+                    
+                        {
+                            "year":"2017",
+                            "indicator":"TX_NEW",
+                            "target":"36,875",
+                            "actual": "14,810"
+                        },
+                        {
+                            "year":"2018",
+                            "indicator":"TX_NEW",
+                            "target":"37,246",
+                            "actual": "11,933"
+                        },
+                        {
+                            "year":"2019",
+                            "indicator":"TX_NEW",
+                            "target":"35,421",
+                            "actual": "8957"
+                        }                        
+                        {
+                            "year":"2017",
+                            "indicator": "TX_CURR",
+                            "target":"193,517",
+                            "actual": "563,461"
+                        },
+                        {
+                            "year":"2018",
+                            "indicator": "TX_CURR",
+                            "target":"213,496",
+                            "actual": "603,804"
+                        },
+                        {
+                            "year":"2019",
+                            "indicator": "TX_CURR",
+                            "target":"197,744",
+                            "actual": "607,304"
+                        }                                                
+                    ]
+    
+                }]

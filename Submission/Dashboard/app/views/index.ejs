@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+	<meta charset="utf-8">
+	<body>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/public/css/map_style.css" />
+
+		<div id="main">
+
+		</div>
+		<form hidden id="chartForm" action="/charts" method="POST">
+			<input type="hidden" id="country_name" name="country_name" value="">
+		</form>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+		<script type="text/javascript" src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+		<script src="https://unpkg.com/topojson-client@3"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+		<script type="text/javascript" src="/public/scripts/functions.js"></script>
+		<script type="text/javascript" src="/public/scripts/main.js"></script>	
+
+
+	</body>
+</html>

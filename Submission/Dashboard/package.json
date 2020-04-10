@@ -1,0 +1,28 @@
+{
+  "name": "team36dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CS 6440 Team 36 Spring 2020 FHIR Dashboard",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "ejs": "^2.5.5",
+    "express": "^4.16.3",
+    "express-session": "^1.7.6",
+    "gijgo": "^1.9.6",
+    "jquery": "^3.3.1",
+    "jquery-validation": "^1.17.0",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "mysql": "^2.15.0",
+    "npm": "^5.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,117 @@
+    [ {
+            "name":"Botswana", 
+            "indicators": [ 
+                {
+                    "indicator": "HTS_TEST",
+                    "results": [ 
+                        {
+                            "year": "2017",
+                            "data": {
+                                "target": "138,368",
+                                "actual": "81,745",
+                                "percent": "56.12" 
+                            }
+                        },
+                        {
+                            "year": "2018",
+                            "data": {
+                                "target": "101,375",
+                                "actual": "95,013",
+                                "percent":"89.03" 
+                            }
+                        },
+                            {
+                                "year": "2019",
+                                "data": {
+                                    "target": "24,011",
+                                    "actual": "49,910",
+                                    "percent": "100" 
+                                }
+                            }
+                                    
+                    ]
+                },
+                {
+                    "indicator": "HTS_TEST_POS",
+                    "results":[
+                        {
+                            "year":"2017",
+                            "data": {
+                                "target":"6822",
+                                "actual": "2976",
+                                "percent": "41.44"
+                            }
+                        },
+                        {
+                            "year":"2018",
+                            "data": {
+                                "target":"6998",
+                                "actual": "3144",
+                                "percent": "42.68"
+                            }
+                        },
+                        {
+                            "year":"2019",
+                            "data": {
+                                "target":"1765",
+                                "actual": "1474",
+                                "percent": "79.34"
+                            }
+                        }                                                
+                    ]
+                },
+                {
+                    "indicator": "TX_NEW",
+                    "results":[
+                        {
+                            "year":"2017",
+                            "data": {
+                                "target":"36,875",
+                                "actual": "14,810"
+                            }
+                        },
+                        {
+                            "year":"2018",
+                            "data": {
+                                "target":"37,246",
+                                "actual": "11,933"
+                            }
+                        },
+                        {
+                            "year":"2019",
+                            "data": {
+                                "target":"35,421",
+                                "actual": "8957"
+                            }
+                        }                                                
+                    ]
+                },
+                {
+                    "indicator": "TX_CURR",
+                    "results":[
+                        {
+                            "year":"2017",
+                            "data": {
+                                "target":"193,517",
+                                "actual": "563,461"
+                            }
+                        },
+                        {
+                            "year":"2018",
+                            "data": {
+                                "target":"213,496",
+                                "actual": "603,804"
+                            }
+                        },
+                        {
+                            "year":"2019",
+                            "data": {
+                                "target":"197,744",
+                                "actual": "607,304"
+                            }
+                        }                                                
+                    ]
+                }                                
+            ]
+        }
+    ]
