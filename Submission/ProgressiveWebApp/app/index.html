@@ -1,0 +1,335 @@
+<!--
+Copyright 2018 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!--Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta charset="utf-8">
+  <title>Team 36</title>
+  <link rel="stylesheet" href="style/main.css" />
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#90a8b2">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/aids-256x256.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <link rel="apple-touch-icon" href="images/touch/aids-256x256.png">
+
+  <!-- Tile for Win8 -->
+  <meta name="msapplication-TileColor" content="#90a8b2">
+  <meta name="msapplication-TileImage" content="images/touch/aids-256x256.png">
+
+</head>
+
+<body>
+<header>
+  <ul class="navbar">
+    <li><a class="home" href="#home"><h2>Global HIV Epidemic Control Decision Support</h2></a></li>
+    <li><img class="profile" src="images/profile/dog.png" alt="profile" /></li>
+  </ul>
+</header>
+
+<main>
+
+  <section>
+
+    <!--<h2>Current Client Data</h2>-->
+
+    <!-- hidden warnings are displayed dynamically -->
+    <p id="offline" class="message warn"></p>
+    <p id="online" class="message warn"></p>
+    <p id="no-data" class="message error"></p>
+    <p id="data-saved" class="message success"></p>
+    <p id="save-error" class="message error">Server data couldn't be saved offline :(</p>
+    <p id="data-error" class="message error">Please enter all required data elements</p>
+
+    <ul id="container" class="container">
+      <!-- items dynamically populated -->
+    </ul>
+
+  </section>
+
+  <section class="form-section">
+
+    <div class="card">
+      <div class="card-title">
+        <h2>Client Data</h2>
+      </div>
+      <div class="support-text">
+        <form name="client_data" action="#" method="post">
+          <div class="textfield">
+            <label for="hts_id_number">HTS ID number</label>
+            <input class="text-response" id="hts_id_number" name="hts_id_number"/>
+          </div>
+          <div class="textfield">
+            <label for="first_name">First Name</label>
+            <input class="text-response" id="first_name" name="first_name"/>
+          </div>
+          <div class="textfield">
+            <label for="middle_name">Middle Name</label>
+            <input class="text-response" id="middle_name" name="middle_name"/>
+          </div>
+          <div class="textfield">
+            <label for="last_name">Last Name</label>
+            <input class="text-response" id="last_name" name="last_name"/>
+          </div>
+          <div class="textfield">
+            <label for="birth_date">Date of Birth</label>
+            <input class="text-response" id="birth_date" type="date" name="birth_date" onblur="calculate_age(birth_date.value)"/>
+          </div>
+          <div class="textfield">
+            <label for="age">Age</label>
+            <input class="text-response" id="age" type="number" name="age" step="1" pattern="\d+" onchange="clear_dob()"/>
+          </div>
+          <div class="textfield">
+            <label>Sex</label>
+          </div>
+          <div class="option-group">
+            <div class="options">
+              <input type="radio" id="sex_female" name="sex" value="female" onclick="yes_or_no('sex_female', 'female_pregnant');">
+              <label for="sex_female">Female</label>
+              <input type="radio" id="sex_male" name="sex" value="male" onclick="yes_or_no('sex_female', 'female_pregnant');">
+              <label for="sex_male">Male</label>
+            </div>
+          </div>
+          <div class="textfield" id="female_pregnant" style="display: none">
+            <div class="textfield">
+              <label>Currently Pregnant</label>
+            </div>
+            <div class="option-group">
+              <div class="options">
+                <input type="radio" id="pregnant_yes" name="pregnant" value="yes">
+                <label for="pregnant_yes">Yes</label>
+                <input type="radio" id="pregnant_no" name="pregnant" value="no">
+                <label for="pregnant_no">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="textfield">
+            <label>Village:</label>
+          </div>
+          <div class="option-group">
+            <div class="listboxoptions">
+              <div class="listoptions">
+                <input type="radio" id="auburndale" name="village" value="auburndale">
+                <label for="auburndale">Auburndale</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="chestnut_hill" name="village" value="chestnut_hill">
+                <label for="chestnut_hill">Chestnut Hill</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="lower_falls" name="village" value="lower_falls">
+                <label for="lower_falls">Lower Falls</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="newton_center" name="village" value="newton_center">
+                <label for="newton_center">Newton Center</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="newton_corner" name="village" value="newton_corner">
+                <label for="newton_corner">Newton Corner</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="newton_highlands" name="village" value="newton_highlands">
+                <label for="newton_highlands">Newton Highlands</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="newtonville" name="village" value="newtonville">
+                <label for="newtonville">Newtonville</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="nonantum" name="village" value="nonantum">
+                <label for="nonantum">Nonantum</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="oak_hill" name="village" value="oak_hill">
+                <label for="oak_hill">Oak Hill</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="thomasonville" name="village" value="thomasonville">
+                <label for="thomasonville">Thompsonville</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="upper_falls" name="village" value="upper_falls">
+                <label for="upper_falls">Upper Falls</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="waban" name="village" value="waban">
+                <label for="waban">Waban</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="west_newton" name="village" value="west_newton">
+                <label for="west_newton">West Newton</label>
+              </div>
+            </div>
+          </div>
+          <div class="textfield">
+            <label>Had a Previous HIV Test</label>
+          </div>
+          <div class="option-group">
+            <div class="options">
+              <input type="radio" id="previous_test_yes" name="previous_test" value="yes" onclick="yes_or_no('previous_test_yes', 'previous_test_date');">
+              <label for="previous_test_yes">Yes</label>
+              <input type="radio" id="previous_test_no" name="previous_test" value="no" onclick="yes_or_no('previous_test_yes', 'previous_test_date');">
+              <label for="previous_test_no">No</label>
+            </div>
+          </div>
+          <div class="textfield" id="previous_test_date" style="display: none">
+            <label for="prior_test_date">Date of Prior Test</label>
+            <input class="text-response" id="prior_test_date" type="month" name="prior_test_date"/>
+          </div>
+          <div class="textfield">
+            <label>Accepted HIV test</label>
+          </div>
+          <div class="option-group">
+            <div class="options">
+              <input type="radio" id="accepted_test_yes" name="accepted_test" value="yes">
+              <label for="accepted_test_yes">Yes</label>
+              <input type="radio" id="accepted_test_no" name="accepted_test" value="no">
+              <label for="accepted_test_no">No</label>
+            </div>
+          </div>
+          <div class="textfield">
+            <label for="test_date">Test Date</label>
+            <input class="text-response" id="test_date" type="date" name="test_date"/>
+          </div>
+          <div class="options">
+            <input type="checkbox" id="determine_assay" name="determine_assay" checked onclick="determine_enabled()">
+            <label for="determine_assay">Determine Assay</label>
+          </div>
+          <div class="option-group">
+            <div class="options">
+              <input type="radio" id="determine_result_negative" name="determine_result" value="negative">
+              <label for="determine_result_negative">Negative</label>
+              <input type="radio" id="determine_result_positive" name="determine_result" value="positive">
+              <label for="determine_result_positive">Positive</label>
+              <input type="radio" id="determine_result_indeterminate" name="determine_result" value="indeterminate">
+              <label for="determine_result_indeterminate">Indeterminate</label>
+            </div>
+          </div>
+          <div class="options">
+            <input type="checkbox" id="uni_gold_assay" name="uni_gold_assay" onclick="uni_gold_enabled()">
+            <label for="uni_gold_assay">Uni-Gold Recombigen Assay</label>
+          </div>
+          <div class="option-group" >
+            <div class="options">
+              <input disabled type="radio" id="uni_gold_result_negative" name="uni_gold_result" value="negative">
+              <label for="uni_gold_result_negative">Negative</label>
+              <input disabled type="radio" id="uni_gold_result_positive" name="uni_gold_result" value="positive">
+              <label for="uni_gold_result_positive">Positive</label>
+              <input disabled type="radio" id="uni_gold_result_indeterminate" name="uni_gold_result" value="indeterminate">
+              <label for="uni_gold_result_indeterminate">Indeterminate</label>
+            </div>
+          </div>
+          <div class="options">
+            <input type="checkbox" id="sd_bioline_assay" name="sd_bioline_assay" onclick="bioline_enabled()">
+            <label for="sd_bioline_assay">SD Bioline Assay</label>
+          </div>
+          <div class="option-group">
+            <div class="options">
+              <input disabled type="radio" id="sd_bioline_result_negative" name="sd_bioline_result" value="negative">
+              <label for="sd_bioline_result_negative">Negative</label>
+              <input disabled type="radio" id="sd_bioline_result_positive" name="sd_bioline_result" value="positive">
+              <label for="sd_bioline_result_positive">Positive</label>
+              <input disabled type="radio" id="sd_bioline_result_indeterminate" name="sd_bioline_result" value="indeterminate">
+              <label for="sd_bioline_result_indeterminate">Indeterminate</label>
+            </div>
+          </div>
+          <div class="textfield">
+            <label>Test Result Received by Client</label>
+          </div>
+          <div class="option-group">
+            <div class="options">
+              <input type="radio" id="result_received_negative" name="result_received" value="negative">
+              <label for="result_received_negative">Negative</label>
+              <input type="radio" id="result_received_positive" name="result_received" value="positive">
+              <label for="result_received_positive">Positive</label>
+              <input type="radio" id="result_received_indeterminate" name="result_received" value="indeterminate">
+              <label for="result_received_indeterminate">Indeterminate</label>
+            </div>
+          </div>
+          <div class="textfield">
+            <label for="appointment_date">Appointment Date</label>
+            <input class="text-response" id="appointment_date" type="date" name="appointment_date"/>
+          </div>
+          <div class="textfield">
+            <label>Appointment Location</label>
+          </div>
+          <div class="option-group">
+            <div class="listboxoptions">
+              <div class="listoptions">
+                <input type="radio" id="afc" name="appointment_location" value="afc">
+                <label for="afc">AFC Care</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="anastasia" name="appointment_location" value="anastasia">
+                <label for="anastasia">Anastasia Medical</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="fresenius" name="appointment_location" value="fresenius">
+                <label for="fresenius">Fresenius Medical Care</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="minute" name="appointment_location" value="minute">
+                <label for="minute">Minute Clinic</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="newton_wellesley" name="appointment_location" value="newton_wellesley">
+                <label for="newton_wellesley">Newton-Wellesley Center</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="partners" name="appointment_location" value="partners">
+                <label for="partners">Partners Care</label>
+              </div>
+              <div class="listoptions">
+                <input type="radio" id="steward" name="appointment_location" value="steward">
+                <label for="steward">Steward Medical Group</label>
+              </div>
+            </div>
+          </div>
+          <div class="card-action">
+            <button id="add-event-button" type="submit" class="raised button ripple">
+              Add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+
+</footer>
+<script src="js/idb-promised.js"></script>
+<script src="js/main.js"></script>
+<script src="js/moment.js"></script>
+</body>
+</html>

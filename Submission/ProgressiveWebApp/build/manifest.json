@@ -1,0 +1,22 @@
+{
+  "name": "Global HIV Epidemic Control Decision Support",
+  "short_name": "Global HIV CDS",
+  "lang": "en-US",
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#90a8b2",
+  "icons": [
+    {
+      "src": "images/touch/aids-128x128.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "images/touch/aids-256x256.png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "images/touch/aids-512x512.png",
+      "sizes": "512x512"
+    }
+  ]
+}
